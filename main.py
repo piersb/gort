@@ -3,8 +3,13 @@
 
 print( 'Gort speaking.' )
 
-fp = open('./writers_list', 'r')
 
-members = fp.read().splitlines()
+def get_members(file):
+    fp = open(file, 'r')
+    members = fp.read().splitlines()
+    fp.close()
+    return members
 
-fp.close()
+members = get_members('./writers_list')
+
+print(members[:4])
